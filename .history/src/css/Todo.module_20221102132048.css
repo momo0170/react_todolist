@@ -1,0 +1,7 @@
+.input {
+  width: 24px;
+  height: 24px;
+}
+.name {
+  flex: 1 1 80%;
+}

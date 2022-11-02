@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  border-radius: 20px;
+  width: 400px;
+  height: 400px;
+}
+
+.header {
+  display: flex;
+  background-color: lightgray;
+}
+.modeBtn {
+  border: 0;
+  background-color: transparent;
+}
+
+.main {
+  flex: 1 1 70%;
+}
+
+.footer {
+  flex: 1 1 20%;
+  background-color: lightgrey;
+}

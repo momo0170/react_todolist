@@ -1,0 +1,23 @@
+.input {
+  display: none;
+}
+.label {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--light-mode-black);
+  border-radius: 5px;
+}
+.input:checked + label::after {
+  content: '✓';
+  font-size: 24px;
+}
+.name {
+  flex: 1 1 80%;
+  margin-left: 10px;
+  color: var(--light-mode-black);
+}
+.deleteBtn {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}

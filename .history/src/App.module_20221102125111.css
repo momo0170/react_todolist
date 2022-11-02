@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  border-radius: 20px;
+  width: 400px;
+  height: 400px;
+}
+
+.header {
+  display: flex;
+  background-color: #f0f0f0;
+  border-radius: 20px 20px 0 0;
+}
+.modeBtn {
+  border: 0;
+  background-color: transparent;
+}
+.filter {
+  list-style: none;
+  display: flex;
+}
+
+.main {
+  flex: 1 1 70%;
+  background-color: #fbfbfb;
+}
+
+.footer {
+  flex: 1 1 20%;
+  background-color: #f0f0f0;
+  border-radius: 0 0 20px 20px;
+}

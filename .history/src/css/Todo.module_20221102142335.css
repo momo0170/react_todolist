@@ -1,0 +1,15 @@
+.input {
+  width: 18px;
+  height: 18px;
+}
+.name {
+  flex: 1 1 80%;
+  margin-left: 10px;
+  color: var(--light-mode-black);
+  font-weight: 500;
+}
+.deleteBtn {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}

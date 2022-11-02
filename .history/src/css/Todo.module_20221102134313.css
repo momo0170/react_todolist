@@ -1,0 +1,19 @@
+.input {
+  display: none;
+}
+.label {
+  width: 18px;
+  height: 18px;
+  border: 1px solid b595959lack;
+}
+.label:checked {
+}
+.name {
+  flex: 1 1 80%;
+  margin-left: 10px;
+}
+.deleteBtn {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}

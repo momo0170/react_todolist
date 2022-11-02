@@ -50,7 +50,6 @@ function App() {
             className={styles.input}
             onChange={onChange}
           />
-
           <button className={styles.addBtn}>Add</button>
         </form>
       </footer>

@@ -1,0 +1,10 @@
+.name {
+  flex: 1 1 80%;
+  margin-left: 10px;
+  color: var(--light-mode-black);
+}
+.deleteBtn {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}

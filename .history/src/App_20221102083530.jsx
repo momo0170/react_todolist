@@ -1,5 +1,5 @@
-import styles from './App.module.css';
-import { BsMoonFill, BsSun } from 'react-icons/bs';
+import styles from './css/App.module.css';
+import { BsMoonFill, BsSun, BsTrash, BsTrashFill } from 'react-icons/bs';
 import { useEffect, useRef, useState } from 'react';
 import Todo from './components/Todo';
 
@@ -50,7 +50,6 @@ function App() {
             className={styles.input}
             onChange={onChange}
           />
-
           <button className={styles.addBtn}>Add</button>
         </form>
       </footer>

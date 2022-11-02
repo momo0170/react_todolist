@@ -8,7 +8,8 @@ export default function Todo({ todo, onDelete }) {
   };
   return (
     <>
-      <input id="checkbox" type="checkbox" className={styles.input} />
+      <input type="checkbox" className={styles.input} />
+      <label htmlFor="checkbox" className={styles.label}></label>
       <span className={styles.name}>{todo.name}</span>
       <button className={styles.deleteBtn} onClick={handleDelete}>
         <BsTrashFill size="18" color="#595959" />
