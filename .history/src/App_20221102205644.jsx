@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import Todo from './components/Todo';
 
 function App() {
-  const [filter, setFilter] = useState('all');
+  const [isChecked, setIsChecked] = useState(false);
   const [todos, setTodos] = useState([]);
   const onSubmit = (e) => {
     console.log(e);
@@ -12,7 +12,7 @@ function App() {
     if (e.target[0].value !== '') {
       setTodos([
         ...todos,
-        { id: todos.length + 1, name: e.target[0].value, checked: false },
+        { id: todos.length + 1, name: e.target[0].value, checked: isChecked },
       ]);
       e.target[0].value = '';
     }
@@ -24,17 +24,18 @@ function App() {
   const onDelete = (targetId) => {
     setTodos((prev) => prev.filter((todo) => todo.id !== targetId));
   };
-  const onCheck = (targetChecked, targetId) => {
-    setTodos((prev) =>
-      prev.map((todo) => {
-        if (todo.id === targetId) {
-          return { ...todo, checked: targetChecked };
-        } else {
-          return todo;
-        }
-      })
-    );
-  };
+
+  useEffect(() => {
+    if (isChecked == true) {
+      setTodos((prev) =>
+        prev.map((todo) => {
+          return { ...todo, checked: !isChecked };
+        })
+      );
+    } else {
+      console.log('그대로 두자');
+    }
+  }, [isChecked]);
 
   console.log(todos);
 
@@ -53,7 +54,7 @@ function App() {
       <main className={styles.main}>
         {todos.map((todo) => (
           <li className={styles.list} key={todo.id}>
-            <Todo todo={todo} onDelete={onDelete} onCheck={onCheck} />
+            <Todo todo={todo} onDelete={onDelete} />
           </li>
         ))}
       </main>

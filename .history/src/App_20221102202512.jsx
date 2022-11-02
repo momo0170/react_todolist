@@ -4,15 +4,21 @@ import { useEffect, useRef, useState } from 'react';
 import Todo from './components/Todo';
 
 function App() {
-  const [filter, setFilter] = useState('all');
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState([
+    {
+      id: 1,
+      name: 'ㅇㅇ',
+      checked: isChecked,
+    },
+  ]);
+  const [isChecked, setIsChecked] = useState(false);
   const onSubmit = (e) => {
     console.log(e);
     e.preventDefault();
     if (e.target[0].value !== '') {
       setTodos([
         ...todos,
-        { id: todos.length + 1, name: e.target[0].value, checked: false },
+        { id: todos.length + 1, name: e.target[0].value, checked: isChecked },
       ]);
       e.target[0].value = '';
     }
@@ -24,18 +30,28 @@ function App() {
   const onDelete = (targetId) => {
     setTodos((prev) => prev.filter((todo) => todo.id !== targetId));
   };
-  const onCheck = (targetChecked, targetId) => {
+  const onCheck = (targetId) => {
     setTodos((prev) =>
       prev.map((todo) => {
-        if (todo.id === targetId) {
-          return { ...todo, checked: targetChecked };
-        } else {
-          return todo;
+        if (targetId === todo.id) {
+          return { ...todo, checked: !isChecked };
         }
       })
     );
   };
 
+  // useEffect(() => {
+  //   if (isChecked == true) {
+  //     setTodos((prev) =>
+  //       prev.map((todo) => {
+
+  //         return { ...todo, checked: isChecked };
+  //       })
+  //     );
+  //   } else {
+  //     console.log('그대로 두자');
+  //   }
+  // }, [isChecked]);
   console.log(todos);
 
   return (

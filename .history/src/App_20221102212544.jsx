@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import Todo from './components/Todo';
 
 function App() {
-  const [filter, setFilter] = useState('all');
+  const [isChecked, setIsChecked] = useState(false);
   const [todos, setTodos] = useState([]);
   const onSubmit = (e) => {
     console.log(e);
@@ -12,7 +12,7 @@ function App() {
     if (e.target[0].value !== '') {
       setTodos([
         ...todos,
-        { id: todos.length + 1, name: e.target[0].value, checked: false },
+        { id: todos.length + 1, name: e.target[0].value, checked: isChecked },
       ]);
       e.target[0].value = '';
     }
@@ -29,8 +29,6 @@ function App() {
       prev.map((todo) => {
         if (todo.id === targetId) {
           return { ...todo, checked: targetChecked };
-        } else {
-          return todo;
         }
       })
     );

@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import Todo from './components/Todo';
 
 function App() {
-  const [filter, setFilter] = useState('all');
+  // const [isChecked, setIsChecked] = useState(false);
   const [todos, setTodos] = useState([]);
   const onSubmit = (e) => {
     console.log(e);
@@ -35,6 +35,9 @@ function App() {
       })
     );
   };
+  const handleActive = () => {
+    setTodos((prev) => prev.filter((todo) => todo.checked === false));
+  };
 
   console.log(todos);
 
@@ -46,7 +49,7 @@ function App() {
         </button>
         <ul className={styles.filter}>
           <li>All</li>
-          <li>Active</li>
+          <li onClick={handleActive}>Active</li>
           <li>Completed</li>
         </ul>
       </header>

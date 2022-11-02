@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from 'react';
 import Todo from './components/Todo';
 
 function App() {
-  const [filter, setFilter] = useState('all');
   const [todos, setTodos] = useState([]);
   const onSubmit = (e) => {
     console.log(e);
@@ -24,17 +23,6 @@ function App() {
   const onDelete = (targetId) => {
     setTodos((prev) => prev.filter((todo) => todo.id !== targetId));
   };
-  const onCheck = (targetChecked, targetId) => {
-    setTodos((prev) =>
-      prev.map((todo) => {
-        if (todo.id === targetId) {
-          return { ...todo, checked: targetChecked };
-        } else {
-          return todo;
-        }
-      })
-    );
-  };
 
   console.log(todos);
 
@@ -53,7 +41,12 @@ function App() {
       <main className={styles.main}>
         {todos.map((todo) => (
           <li className={styles.list} key={todo.id}>
-            <Todo todo={todo} onDelete={onDelete} onCheck={onCheck} />
+            <Todo
+              todo={todo}
+              onDelete={onDelete}
+              setTodos={setTodos}
+              todos={todos}
+            />
           </li>
         ))}
       </main>

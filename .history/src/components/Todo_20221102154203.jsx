@@ -2,16 +2,20 @@ import React, { useEffect, useState } from 'react';
 import styles from '../css/Todo.module.css';
 import { BsTrash, BsTrashFill } from 'react-icons/bs';
 
-export default function Todo({ todo, onDelete, onCheck }) {
+export default function Todo({ todo, onDelete }) {
+  const [isChecked, setIsChecked] = useState(false);
   const handleDelete = () => {
     onDelete(todo.id);
   };
-  // 체크를 누르면
   const handleCheck = (e) => {
-    console.log(e);
-    onCheck(e.target.checked, todo.id);
+    // console.log(e);
+    setIsChecked((prev) => !prev);
   };
 
+  // 체크박스를 누를 때마다 실행
+  useEffect(() => {}, [isChecked]);
+
+  console.log(isChecked);
   return (
     <>
       <input

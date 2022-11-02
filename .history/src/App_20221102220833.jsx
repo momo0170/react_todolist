@@ -35,6 +35,9 @@ function App() {
       })
     );
   };
+  const handleActive = () => {
+    setTodos((prev) => prev.filter((todo) => todo.checked === false));
+  };
 
   console.log(todos);
 
@@ -46,7 +49,7 @@ function App() {
         </button>
         <ul className={styles.filter}>
           <li>All</li>
-          <li>Active</li>
+          <li onClick={handleActive}>Active</li>
           <li>Completed</li>
         </ul>
       </header>

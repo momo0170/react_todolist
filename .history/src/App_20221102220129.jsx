@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import Todo from './components/Todo';
 
 function App() {
-  const [filter, setFilter] = useState('all');
+  // const [isChecked, setIsChecked] = useState(false);
   const [todos, setTodos] = useState([]);
   const onSubmit = (e) => {
     console.log(e);

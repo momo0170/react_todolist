@@ -3,13 +3,14 @@ import styles from '../css/Todo.module.css';
 import { BsTrash, BsTrashFill } from 'react-icons/bs';
 
 export default function Todo({ todo, onDelete, onCheck }) {
+  // const [isChecked, setIsChecked] = useState(false);
   const handleDelete = () => {
     onDelete(todo.id);
   };
   // 체크를 누르면
   const handleCheck = (e) => {
     console.log(e);
-    onCheck(e.target.checked, todo.id);
+    todo && onCheck(todo.id);
   };
 
   return (

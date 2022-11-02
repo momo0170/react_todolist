@@ -37,7 +37,14 @@ function App() {
   };
 
   console.log(todos);
-
+  useEffect(() => {
+    if (filter === 'active') {
+      setTodos((prev) => prev.filter((todo) => todo.checked === false));
+    }
+    if (filter === 'all') {
+      setTodos((prev) => prev.filter((todo) => todo.checked === false));
+    }
+  }, [filter]);
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -45,9 +52,9 @@ function App() {
           <BsMoonFill size="18" color="#595959" />
         </button>
         <ul className={styles.filter}>
-          <li>All</li>
-          <li>Active</li>
-          <li>Completed</li>
+          <li onClick={() => setFilter('all')}>All</li>
+          <li onClick={() => setFilter('active')}>Active</li>
+          <li onClick={() => setFilter('completed')}>Completed</li>
         </ul>
       </header>
       <main className={styles.main}>
