@@ -9,7 +9,9 @@ export default function Todo({ todo, onDelete, onCheck }) {
   // 체크를 누르면
   const handleCheck = (e) => {
     console.log(e);
-    onCheck(e.target.checked, todo.id);
+    const { checked } = e.target;
+    console.log(checked);
+    onCheck(checked, todo.id);
   };
 
   return (

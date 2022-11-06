@@ -1,0 +1,12 @@
+/* Main */
+.main {
+  flex: 1 1 70%;
+  background-color: #fbfbfb;
+  overflow: auto;
+}
+.list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 10px 20px;
+}
