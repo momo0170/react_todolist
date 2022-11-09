@@ -19,7 +19,7 @@
   border-radius: 7px 0 0 7px;
   color: var(--color-font);
   font-weight: 800;
-  background-color: var(--color-bg);
+  background-color: antiquewhite;
 }
 input:focus::placeholder {
   color: transparent;

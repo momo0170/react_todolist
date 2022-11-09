@@ -21,7 +21,6 @@ function App() {
 
   const onAdd = (e) => {
     e.preventDefault();
-    // 값이 존재한다면
     if (e.target[0].value !== '') {
       setTodos([
         ...todos,

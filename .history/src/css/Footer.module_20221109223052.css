@@ -17,9 +17,8 @@
   border: 0;
   padding: 15px;
   border-radius: 7px 0 0 7px;
-  color: var(--color-font);
+  color: red;
   font-weight: 800;
-  background-color: var(--color-bg);
 }
 input:focus::placeholder {
   color: transparent;

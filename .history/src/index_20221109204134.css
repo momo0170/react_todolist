@@ -1,18 +1,3 @@
-:root {
-  --color-font: #595959;
-  --color-bar-bg: #eeeeee;
-  --color-bg: #fbfbfb;
-  --color-btn: #595959;
-  --color-trash: #595959;
-}
-
-html.dark {
-  --color-font: #dedede;
-  --color-bar-bg: #373737;
-  --color-bg: #424242;
-  --color-trash: #dedede;
-}
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

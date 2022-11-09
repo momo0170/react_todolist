@@ -20,9 +20,14 @@ export default function Todo({ todo, onDelete, onUpdate }) {
         checked={status === 'completed'} // check가 되면 completed
         onChange={handleChange}
       />
-      <span className={styles.name}>{name}</span>
+      <span
+        className={styles.name}
+        style={darkMode ? { color: '#DEDEDE' } : {}}
+      >
+        {name}
+      </span>
       <button className={styles.deleteBtn} onClick={handleDelete}>
-        <BsTrashFill size="18" className={styles.deleteIcon} />
+        <BsTrashFill size="18" color={darkMode ? '#DEDEDE' : '#595959'} />
       </button>
     </>
   );

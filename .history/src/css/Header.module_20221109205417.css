@@ -1,7 +1,7 @@
 /* Header */
 .header {
   display: flex;
-  background-color: var(--color-bar-bg);
+  background-color: #eeeeee;
   border-radius: 20px 20px 0 0;
   justify-content: space-between;
   padding: 0 20px;
@@ -10,7 +10,6 @@
   border: 0;
   background-color: transparent;
   cursor: pointer;
-  color: var(--color-font);
 }
 .filter {
   list-style: none;
@@ -21,15 +20,15 @@
   margin: 0 10px;
   cursor: pointer;
   font-weight: 600;
-  color: var(--color-font);
+  color: var(--color-font-lightMode);
 }
 
 .filterList.selected {
-  color: var(--color-font);
+  color: var(--color-font-lightMode);
 }
 .filterList.selected::after {
   content: '';
   display: block;
-  border: 1px solid var(--color-font);
+  border: 1px solid var(--color-font-lightMode);
   margin: 0.2rem 0;
 }

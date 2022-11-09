@@ -22,7 +22,7 @@ export default function Todo({ todo, onDelete, onUpdate }) {
       />
       <span className={styles.name}>{name}</span>
       <button className={styles.deleteBtn} onClick={handleDelete}>
-        <BsTrashFill size="18" className={styles.deleteIcon} />
+        <BsTrashFill size="18" />
       </button>
     </>
   );

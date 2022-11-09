@@ -5,7 +5,10 @@ import Todo from './Todo';
 export default function Main({ onDelete, onCheck, todos, filter, onUpdate }) {
   const filtered = getFilterdItems(todos, filter);
   return (
-    <main className={styles.main}>
+    <main
+      className={styles.main}
+      style={darkMode ? { backgroundColor: '#424242' } : {}}
+    >
       {filtered.map((todo) => (
         <li className={styles.list} key={todo.id}>
           <Todo

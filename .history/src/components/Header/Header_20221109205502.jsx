@@ -1,12 +1,16 @@
 import styles from '../../css/Header.module.css';
 import { BsMoonFill, BsSunFill } from 'react-icons/bs';
-import { darkModeContext } from '../../context/DarkModeContext';
-import { useContext } from 'react';
+import { useDarkMode } from '../../context/DarkModeContext';
 
+const fontColorDark = '#595959';
+const fontColorLight = '#DEDEDE';
 export default function Header({ filters, filter, onFilterChange }) {
-  const { darkMode, toggleDarkMode } = useContext(darkModeContext);
+  const { darkMode, toggleDarkMode } = useDarkMode();
   return (
-    <header className={styles.header}>
+    <header
+      className={styles.header}
+      style={darkMode ? { backgroundColor: '#373737' } : {}}
+    >
       <button className={styles.modeBtn} onClick={toggleDarkMode}>
         {darkMode ? <BsSunFill size="18" /> : <BsMoonFill size="18" />}
       </button>

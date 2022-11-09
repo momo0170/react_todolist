@@ -10,7 +10,6 @@
   border: 0;
   background-color: transparent;
   cursor: pointer;
-  color: var(--color-font);
 }
 .filter {
   list-style: none;

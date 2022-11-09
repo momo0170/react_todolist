@@ -1,16 +1,10 @@
 :root {
-  --color-font: #595959;
-  --color-bar-bg: #eeeeee;
-  --color-bg: #fbfbfb;
-  --color-btn: #595959;
-  --color-trash: #595959;
+  --color-font-lightMode: #595959;
 }
 
 html.dark {
-  --color-font: #dedede;
-  --color-bar-bg: #373737;
-  --color-bg: #424242;
-  --color-trash: #dedede;
+  --color-bg-dark: #424242;
+  --color-font-darkMode: #dedede;
 }
 
 body {
