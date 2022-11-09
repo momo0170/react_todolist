@@ -24,11 +24,11 @@
 }
 
 .filterList.selected {
-  color: var(--light-mode-black);
+  color: #595959;
 }
 .filterList.selected::after {
   content: '';
   display: block;
-  border: 1px solid var(--light-mode-black);
+  border: 1px solid #595959;
   margin: 0.2rem 0;
 }

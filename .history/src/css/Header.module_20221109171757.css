@@ -24,7 +24,7 @@
 }
 
 .filterList.selected {
-  color: var(--light-mode-black);
+  color: #595959;
 }
 .filterList.selected::after {
   content: '';

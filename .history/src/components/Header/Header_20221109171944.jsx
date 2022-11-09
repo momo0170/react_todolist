@@ -1,8 +1,6 @@
 import styles from '../../css/Header.module.css';
 import { BsMoonFill, BsSunFill } from 'react-icons/bs';
 
-const fontColorDark = '#595959';
-const fontColorLight = '#DEDEDE';
 export default function Header({
   onChangeMode,
   darkMode,
@@ -13,6 +11,7 @@ export default function Header({
   const changeMode = () => {
     onChangeMode();
   };
+  const color = '#595959';
   return (
     <header
       className={styles.header}
@@ -20,9 +19,9 @@ export default function Header({
     >
       <button className={styles.modeBtn} onClick={changeMode}>
         {darkMode ? (
-          <BsSunFill size="18" color={fontColorLight} />
+          <BsSunFill size="18" color="#DEDEDE" />
         ) : (
-          <BsMoonFill size="18" color={fontColorDark} />
+          <BsMoonFill size="18" color="#595959" />
         )}
       </button>
       <ul className={styles.filter}>
@@ -31,9 +30,7 @@ export default function Header({
             className={`${styles.filterList} ${
               filter === value && styles.selected
             }`}
-            style={
-              darkMode ? { color: fontColorLight } : { color: fontColorDark }
-            }
+            style={darkMode ? { color: '#DEDEDE' } : { color: color }}
             key={index}
             onClick={() => onFilterChange(value)}
           >

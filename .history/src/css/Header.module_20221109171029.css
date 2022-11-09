@@ -24,11 +24,9 @@
 }
 
 .filterList.selected {
-  color: var(--light-mode-black);
+  font-weight: bolder;
 }
-.filterList.selected::after {
+.filterList::after {
   content: '';
   display: block;
-  border: 1px solid var(--light-mode-black);
-  margin: 0.2rem 0;
 }
