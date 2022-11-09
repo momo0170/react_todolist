@@ -24,13 +24,13 @@ export default function Header({
         )}
       </button>
       <ul className={styles.filter}>
-        {filters.map((filter, index) => (
+        {filters.map((value, index) => (
           <li
             style={darkMode ? { color: '#DEDEDE' } : { color: '#595959' }}
             key={index}
-            onClick={() => onFilterChange(filter)}
+            onClick={() => onFilterChange(value)}
           >
-            {filter}
+            {value}
           </li>
         ))}
       </ul>

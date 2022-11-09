@@ -2,24 +2,22 @@ import React, { useEffect, useState } from 'react';
 import styles from '../../css/Todo.module.css';
 import { BsTrash, BsTrashFill } from 'react-icons/bs';
 
-export default function Todo({ todo, onDelete, onUpdate, darkMode }) {
+export default function Todo({ todo, onDelete, onCheck, darkMode }) {
   const handleDelete = () => {
     onDelete(todo.id);
   };
-
+  // // 체크를 누르면
+  // const handleCheck = (e) => {
+  //   onCheck(e.target.checked, todo.id);
+  // };
   const { name, status } = todo;
-  const handleChange = (e) => {
-    const status = e.target.checked ? 'completed' : 'active';
-    onUpdate({ ...todo, status });
-  };
   return (
     <>
       <input
         id="checkbox"
         type="checkbox"
         className={styles.input}
-        checked={status === 'completed'} // check가 되면 completed
-        onChange={handleChange}
+        checked={status === 'completed'}
       />
       <span
         className={styles.name}

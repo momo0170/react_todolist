@@ -32,7 +32,7 @@ function App() {
   const onDelete = (targetId) => {
     setTodos((prev) => prev.filter((todo) => todo.id !== targetId));
   };
-  const onUpdate = (updated) => {
+  const onUpdate = () => {
     setTodos(todos.map((t) => (t.id === updated.id ? updated : t)));
   };
   const onChangeMode = () => {

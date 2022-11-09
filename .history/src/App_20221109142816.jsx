@@ -23,7 +23,7 @@ function App() {
     if (e.target[0].value !== '') {
       setTodos([
         ...todos,
-        { id: uuidv4(), name: e.target[0].value, status: 'active' },
+        { id: uuidv4(), name: e.target[0].value, checked: false },
       ]);
       e.target[0].value = '';
     }
@@ -32,8 +32,16 @@ function App() {
   const onDelete = (targetId) => {
     setTodos((prev) => prev.filter((todo) => todo.id !== targetId));
   };
-  const onUpdate = (updated) => {
-    setTodos(todos.map((t) => (t.id === updated.id ? updated : t)));
+  const onCheck = (targetChecked, targetId) => {
+    setTodos((prev) =>
+      prev.map((todo) => {
+        if (todo.id === targetId) {
+          return { ...todo, checked: targetChecked };
+        } else {
+          return todo;
+        }
+      })
+    );
   };
   const onChangeMode = () => {
     setDarkMode(!darkMode);
@@ -56,9 +64,8 @@ function App() {
       <Main
         onDelete={onDelete}
         todos={todos}
-        onUpdate={onUpdate}
+        onCheck={onCheck}
         darkMode={darkMode}
-        filter={filter}
       />
       <Footer onAdd={onAdd} darkMode={darkMode} />
     </div>

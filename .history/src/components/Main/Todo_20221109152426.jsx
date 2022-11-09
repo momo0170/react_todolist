@@ -8,9 +8,9 @@ export default function Todo({ todo, onDelete, onUpdate, darkMode }) {
   };
 
   const { name, status } = todo;
-  const handleChange = (e) => {
+  const handleChange = () => {
     const status = e.target.checked ? 'completed' : 'active';
-    onUpdate({ ...todo, status });
+    onUpdate({ ...todo, status: status });
   };
   return (
     <>

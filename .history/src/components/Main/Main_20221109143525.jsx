@@ -2,14 +2,7 @@ import React from 'react';
 import styles from '../../css/Main.module.css';
 import Todo from './Todo';
 
-export default function Main({
-  onDelete,
-  onCheck,
-  todos,
-  darkMode,
-  filter,
-  onUpdate,
-}) {
+export default function Main({ onDelete, onCheck, todos, darkMode, filter }) {
   const filtered = getFilterdItems(todos, filter);
   return (
     <main
@@ -23,7 +16,6 @@ export default function Main({
             onDelete={onDelete}
             onCheck={onCheck}
             darkMode={darkMode}
-            onUpdate={onUpdate}
           />
         </li>
       ))}

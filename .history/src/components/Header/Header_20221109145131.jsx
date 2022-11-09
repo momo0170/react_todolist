@@ -28,7 +28,7 @@ export default function Header({
           <li
             style={darkMode ? { color: '#DEDEDE' } : { color: '#595959' }}
             key={index}
-            onClick={() => onFilterChange(filter)}
+            onClick={() => onFilterChange(value)}
           >
             {filter}
           </li>

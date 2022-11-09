@@ -2,15 +2,17 @@ import React, { useEffect, useState } from 'react';
 import styles from '../../css/Todo.module.css';
 import { BsTrash, BsTrashFill } from 'react-icons/bs';
 
-export default function Todo({ todo, onDelete, onUpdate, darkMode }) {
+export default function Todo({ todo, onDelete, onCheck, darkMode }) {
   const handleDelete = () => {
     onDelete(todo.id);
   };
-
+  // // 체크를 누르면
+  // const handleCheck = (e) => {
+  //   onCheck(e.target.checked, todo.id);
+  // };
   const { name, status } = todo;
-  const handleChange = (e) => {
-    const status = e.target.checked ? 'completed' : 'active';
-    onUpdate({ ...todo, status });
+  const handleChange = () => {
+    ontimeupdate({ ...todo, status: e.target.checked ? 'completed' : 'active; });
   };
   return (
     <>

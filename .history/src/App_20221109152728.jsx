@@ -33,7 +33,11 @@ function App() {
     setTodos((prev) => prev.filter((todo) => todo.id !== targetId));
   };
   const onUpdate = (updated) => {
-    setTodos(todos.map((t) => (t.id === updated.id ? updated : t)));
+    setTodos(
+      todos.map((todo) => {
+        todo.id === updated.id ? updated : todo;
+      })
+    );
   };
   const onChangeMode = () => {
     setDarkMode(!darkMode);

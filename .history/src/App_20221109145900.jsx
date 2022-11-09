@@ -32,8 +32,16 @@ function App() {
   const onDelete = (targetId) => {
     setTodos((prev) => prev.filter((todo) => todo.id !== targetId));
   };
-  const onUpdate = (updated) => {
-    setTodos(todos.map((t) => (t.id === updated.id ? updated : t)));
+  const onCheck = (targetId) => {
+    setTodos(
+      todos.map((todo) => {
+        if (todo.id === targetId) {
+          return { ...todo, status: 'completed' };
+        } else {
+          return { ...todo, status: 'active' };
+        }
+      })
+    );
   };
   const onChangeMode = () => {
     setDarkMode(!darkMode);
@@ -56,7 +64,7 @@ function App() {
       <Main
         onDelete={onDelete}
         todos={todos}
-        onUpdate={onUpdate}
+        onCheck={onCheck}
         darkMode={darkMode}
         filter={filter}
       />
