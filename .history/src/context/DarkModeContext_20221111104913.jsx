@@ -15,6 +15,7 @@ export function DarkModeProvider({ children }) {
       localStorage.theme === 'dark' || // 로컬스토리지에 theme 속성이 dark 이거나
       (!('theme' in localStorage) && // 로컬스토리지에 theme 속성이 없고, 시스템이 다크 모드인 경우
         window.matchMedia('(prefers-color-scheme: dark)').matches);
+
     setDarkMode(isDark);
     changeDarkMode(isDark);
   }, []);
